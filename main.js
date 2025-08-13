@@ -135,7 +135,7 @@ function createWindow() {
 				fsButtonElem.value = "全鍵轉發On: {滑鼠點擊}   |   Off: {右Ctrl}   |   退出: {右Ctrl}{Ctrl+W}";
 			} else {
 			    if (lang === 'zh-CN') {
-				fsButtonElem.value = "键盘直通On: {鼠标单击}   |   Off: {右Ctrl}   |   退出: {右Ctrl}{Ctrl+W};
+				fsButtonElem.value = "键盘直通On: {鼠标单击}   |   Off: {右Ctrl}   |   退出: {右Ctrl}{Ctrl+W}";
 			    } else {
 				fsButtonElem.value = "Passthrough On: {Mouse Click}  |  Off: {Right-Ctrl}  |  Exit: {Right-Ctrl}{Ctrl+W}";
 			    }
