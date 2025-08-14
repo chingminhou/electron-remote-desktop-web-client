@@ -17,7 +17,7 @@ Install [Tampermonkey Extension](https://tampermonkey.net) on Chrome/Chromium-ba
 After installing Tampermonkey, goto 'Manage extension', check 'Allow User Scripts'. See also [this]( https://docs.scriptcat.org/en/docs/use/open-dev).<br>
 安裝 Tampermonkey 後, 至 管理擴充功能, 勾選 允許使用者指令碼. (參考[這網址](https://docs.scriptcat.org/docs/use/open-dev))
 
-Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5afab953de5), click \[Raw\] button in the right-top corner, then it's prompted to install the userscript, revise the line contain "// @match" in the header of the userscript, then visit the website.
+Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5afab953de5), click [Raw] button in the right-top corner, then it's prompted to install the userscript, revise the line contain "// @match" in the header of the userscript, then visit the website.
 
 ## Compare the Ways to Connect to Remote Desktop Web
 | |Electron App | Chrome/Chromium-based<br>Browser + Tampermonkey | Browser |
@@ -26,7 +26,7 @@ Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5
 |Enter fullscreen mode, or the <br>mouse pointer reaches the top edge of the screen| No trigger, no dropdown | A fullscreen exit hint will dropdown | The menu/address bar will dropdown|
 |Keyboard Passthrough|Yes|Yes, except shortcuts of other extension|No, Alt+Tab, Win-key combinations and<br> system level shortcuts cannot be passthrough to remote desktop|
 |1:1 Pixel Mapping<br>while Zoom=100%|Yes|Win11: No (Ratio=1.25)<br>Otherwise: Yes|Win11: No (Ratio=1.25)<br>Otherwise: Yes|
-|Exit Remote Desktop|\[Right-Ctrl\] + \[Ctrl+W\], or<br><br>Press \[Esc\] for 2 sec +<br> \[Ctrl+W\]|\[Right-Ctrl\] + \[Ctrl+W\] (may not work), or<br><br>Press \[Esc\] for 2 sec +<br> \[Ctrl+W\]|\[F11\] (exit fulscreen) +<br> \[Ctrl+W\], or<br><br>Press \[Esc\] for 2 sec +<br> \[Ctrl+W\]
+|Exit Remote Desktop|[Right-Ctrl] + [Ctrl+W], or<br><br>Hold [Esc] for 2 sec +<br> [Ctrl+W]|[Right-Ctrl] + [Ctrl+W] (may not work), or<br><br>Hold [Esc] for 2 sec +<br> [Ctrl+W]|[F11] (exit fulscreen) +<br> [Ctrl+W], or<br><br>Hold [Esc] for 2 sec +<br> [Ctrl+W]
 ## 比較連到 Remote Desktop Web 的方式
 | |Electron App | Chrome/Chromium-based<br>瀏覽器 + Tampermonkey | 瀏覽器 |
 | :--: | :-- | :-- | :-- |
@@ -34,7 +34,7 @@ Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5
 |進入全螢幕時, 或滑鼠<br>游標頂到螢幕上緣時|無動作| 會降下如何退出全螢幕的提示 | 會降下網址列/選單列 |
 |全鍵轉發|Yes|Yes, 除了其它Extension的快捷鍵|No,<br>Alt+Tab, Win-key 組合鍵,<br>系統快捷鍵無法轉發到<br>Remote Desktop|
 |1:1 像素對應, 當 Zoom=100% 時|Yes|Win11: No (Ratio=1.25)<br>其它: Yes|Win11: No (Ratio=1.25)<br>其它: Yes|
-|退出Remote Desktop|\[右Ctrl\] + \[Ctrl+W\], or<br><br>長按 \[Esc\] 2秒 + \[Ctrl+W\]|\[右Ctrl\] + \[Ctrl+W\] (有時無用), 或<br><br>長按 \[Esc\] 2秒 + \[Ctrl+W\]|\[F11\] (退出全螢幕) + \[Ctrl+W\], 或<br><br>長按 \[Esc\] 2秒 + \[Ctrl+W\]
+|退出Remote Desktop|[右Ctrl] + [Ctrl+W], or<br><br>長按 [Esc] 2秒 + [Ctrl+W]|[右Ctrl] + [Ctrl+W] (有時無用), 或<br><br>長按 [Esc] 2秒 + [Ctrl+W]|[F11] (退出全螢幕) + [Ctrl+W], 或<br><br>長按 [Esc] 2秒 + [Ctrl+W]
 
 ## Connection Steps
 | |Electron App | Chrome/Chromium-based<br>Browser + Tampermonkey | Browser |
