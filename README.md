@@ -15,7 +15,7 @@ Install [Tampermonkey Extension](https://tampermonkey.net) on Chrome/Chromium-ba
 [OrangeMonkey Extension](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) is an alternative, as Tampermonkey may display donation prompts.
 
 After installing Tampermonkey, goto 'Manage extension', check 'Allow User Scripts'. See also [this]( https://docs.scriptcat.org/en/docs/use/open-dev).<br>
-安裝 Tampermonkey 後, 至 管理擴充功能, 勾選 允許使用者指令碼. (參考[這網址](https://docs.scriptcat.org/docs/use/open-dev))
+安裝 Tampermonkey 後, 至 管理擴充功能, 勾選 允許使用者指令碼. (參考[繁中網址](https://docs-scriptcat-org.translate.goog/docs/use/open-dev?_x_tr_sl=en&_x_tr_tl=zh-TW&_x_tr_hl=zh-TW&_x_tr_pto=wapp) [簡中網址](https://docs.scriptcat.org/docs/use/open-dev))
 
 Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5afab953de5), click [Raw] button in the right-top corner, then it's prompted to install the userscript, revise the line contain "// @match" in the header of the userscript, then visit the website.
 
@@ -44,7 +44,7 @@ Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5
 |3| Zoom-in/out by Ctrl+add or Ctrl+subtract<br> if it's RDP connection | the same as left | the same as left |
 |4| Login to Remote Desktop Web| the same as left | the same as left |
 |5| Click the red region in the top-left corner<br> to enable keyboard passthrough | the same as left | n/a |
-|6| During the interaction with remote desktop, <br>press Right-Ctrl can temporarily use Alt+Tab on<br>local machine (client), and mouse click can<br>re-enable keyboard passthrough | the same as left | n/a |
+|6| During the interaction with remote desktop, <br>press Right-Ctrl can temporarily use Alt+Tab to switch window on<br>local machine (client), and mouse click can<br>re-enable keyboard passthrough | the same as left | n/a |
 |7| Exit remote desktop connection | the same as left | n/a |
 
 ## 連線步驟
@@ -55,7 +55,7 @@ Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5
 |3| 如果是 RDP, 可以按Ctrl+/Ctrl- 去 Zoom-in/out | 同左 | 同左 |
 |4| 登入Remote Desktop Web| 同左 | 同左 |
 |5| 點擊左上角紅色區域後全鍵轉發 | 同左 | n/a |
-|6| 操作期間, 按 右Ctrl 暫時按本機(Client )的 Alt+Tab, 之後再點擊滑鼠重啟全鍵轉發 | 同左 | n/a |
+|6| 操作期間, 按 右Ctrl 再按 Alt+Tab 是本機(Client)的切換視窗,<br> 之後再點擊滑鼠重啟全鍵轉發 | 同左 | n/a |
 |7| 退出連線 | 同左 | n/a |
 
 ### Note
@@ -85,10 +85,31 @@ You may install the Tampermonkey userscript in another Chromium-based browser to
 
 - The Electron app checks port 443 by default; modify this setting as needed for your application.
 
+- On Mac, use Control+⌘+F instead of F11.
+
 - On MacBook, use Right-⌘ instead of Right-Ctrl.
 
-- The web client requires the English IME to control the remote desktop. However, browsers and Electron apps run in a sandbox and cannot change the IME automatically.<br>
-If the browser/Electron app is not using the English IME, press Right-Ctrl, then Win+Space to select the English IME, and click the mouse to re-enable passthrough mode.
+- During the interaction with remote desktop, you might<br>
+&nbsp;&nbsp;{Right-Ctrl} then Alt+Tab to open Task Switcher on local machine (client)<br>
+&nbsp;&nbsp;{Right-Ctrl} then Win+Tab to open Task View on local machine (client)<br>
+&nbsp;&nbsp;{Right-Ctrl} then Win-key to open Start Menu on local machine (client)<br>
+&nbsp;&nbsp;{Right-Ctrl} then Win-key to show Desktop on local machine (client)<br>
+&nbsp;&nbsp;{Right-Ctrl} then Win+Space to toggle IME on local machine (client)<br>
+&nbsp;&nbsp;and mouse click can re-enable keyboard passthrough<br>
+&nbsp;&nbsp;按一下 右Ctrl, 再按 Alt+Tab → 本機的切換視窗<br>
+&nbsp;&nbsp;按一下 右Ctrl, 再按 Win+Tab → 本機的切換視窗<br>
+&nbsp;&nbsp;按一下 右Ctrl, 再按 Win-key → 本機的開始選單<br>
+&nbsp;&nbsp;按一下 右Ctrl, 再按 Win+D  → 本機的顯示桌面<br>
+&nbsp;&nbsp;按一下 右Ctrl, 再按 Win+Space → 忘記切ENG輸入法, 臨時退出全鍵轉發, 切至ENG輸入法<br>
+&nbsp;&nbsp;最後再回到遠端桌面視窗用滑鼠點一下, 就又回到遠端桌面的全鍵轉發模式了
+
+- If the web client is running on an East Asian language version of Windows (CJK) and you experience issues while typing, check your IME state.<br>
+如果 web client 是中日韓 Windows, 並且在按鍵輸入時遇到問題, 請檢查輸入法狀態
+
+- For East Asian language Windows, the web client requires the English IME to control the remote desktop. However, browsers and Electron apps run in an isolated sandbox and cannot switch the IME automatically.<br>
+If the browser or Electron app is not using the English IME, press Right Ctrl, then Win+Space to select the English IME, and click the mouse to re-enable passthrough mode.<br>
+在中日韓 Windows 中, web client 用戶端需要切換至 ENG 輸入法才能控制遠端桌面。然而，瀏覽器與 Electron 應用程式運行在隔離的沙盒世界中, 無法幫你切換輸入法。
+如果瀏覽器或 Electron app 不是正在 ENG輸入法，先按 右Ctrl，再按 Win+Space 選擇 ENG輸入法, 然後點擊滑鼠再度進入全鍵轉發模式。
 
 - For IME, you might want to <br>
 
@@ -105,7 +126,7 @@ xmodmap -e 'keycode 250 = Super_L' // Meta_L = Super_L'
 ```
 ## Technical Brief
 A browser has two types of fullscreen: browser-level fullscreen and Fullscreen API.
-When the Fullscreen API is invoked, the navigator.keyboard.lock API can pass through almost all key combinations to the server.
+When the Fullscreen API is invoked, the _navigator.keyboard.lock_ API can pass through almost all key combinations to the server.
 
 Passthrough mode is activated by a mouse click event to avoid triggering the “Deceptive site ahead”(此網站是可疑網站) warning.
 
