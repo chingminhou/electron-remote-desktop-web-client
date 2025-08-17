@@ -126,12 +126,14 @@ If the browser or Electron app is not using the English IME, press Right Ctrl, t
 xmodmap -e 'keycode 250 = Super_L' // Meta_L = Super_L'
 ```
 ## Technical Brief
-A browser has two types of fullscreen: browser-level fullscreen and Fullscreen API.
+- A browser has two types of fullscreen: browser-level fullscreen and Fullscreen API.<br>
 When the Fullscreen API is invoked, the _navigator.keyboard.lock_ API can pass through almost all key combinations to the server.
 
-Passthrough mode is activated by a mouse click event to avoid triggering the “Deceptive site ahead”(此網站是可疑網站) warning.
+- Passthrough mode is activated by a mouse click event to avoid triggering the “Deceptive site ahead”(此網站是可疑網站) warning.
 
-OrangeMonkey currently cannot detect when a WebSocket connection closes.
+- OrangeMonkey currently cannot detect when a WebSocket connection closes.
+
+- There is no auto-reconnect after an unexpected disconnect.
 
 ## Refs
 - https://issues.apache.org/jira/browse/GUACAMOLE-989?page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel&focusedCommentId=17095828 <br><br>
