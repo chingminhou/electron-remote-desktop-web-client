@@ -76,7 +76,8 @@ Get-CimInstance -ClassName Win32_VideoController | Select-Object CurrentHorizont
 
 - In VNC connections, the resolution is independent of the zoom factor or pixel ratio.
 
-- Both the Electron app and the Tampermonkey userscript have been tested on RDP and VNC connections to the Guacamole server.
+- The Electron app and the Tampermonkey userscript have been tested on RDP and VNC connections via the Guacamole server.<br>
+Web clients such as RustDesk, Splashtop, AnyDesk, TeamViewer, and Chrome Remote Desktop should be supported, though they have not yet been thoroughly tested.
 
 - Shortcuts from other extensions cannot be passthrough. For example, Immersive Translate (沉浸式翻譯) uses Alt+A and Alt+S, which cannot be sent to the remote server.<br>
 You may install the Tampermonkey userscript in another Chromium-based browser to avoid shortcut conflicts with Immersive Translate.
@@ -129,6 +130,8 @@ A browser has two types of fullscreen: browser-level fullscreen and Fullscreen A
 When the Fullscreen API is invoked, the _navigator.keyboard.lock_ API can pass through almost all key combinations to the server.
 
 Passthrough mode is activated by a mouse click event to avoid triggering the “Deceptive site ahead”(此網站是可疑網站) warning.
+
+OrangeMonkey currently cannot detect when a WebSocket connection closes.
 
 ## Refs
 - https://issues.apache.org/jira/browse/GUACAMOLE-989?page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel&focusedCommentId=17095828 <br><br>
