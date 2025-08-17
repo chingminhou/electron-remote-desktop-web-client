@@ -223,8 +223,35 @@ function createWindow() {
 			 document.body.requestFullscreen();
 		    }
 		}
-
 	    });
+
+	    const errorText = "An error has occurred and this action cannot be completed. If the problem persists, please notify your system administrator or check your system logs.";
+
+	    // Use MutationObserver to detect error insertion
+	    const observer = new MutationObserver((mutations) => {
+		mutations.forEach(mutation => {
+		    mutation.addedNodes.forEach(node => {
+			if (node.nodeType === Node.TEXT_NODE && node.nodeValue.includes(errorText)) {
+			    handleError();
+			} else if (node.nodeType === Node.ELEMENT_NODE && node.innerText && node.innerText.includes(errorText)) {
+			    handleError();
+			}
+		    });
+		});
+	    });
+
+	    observer.observe(document.body, { childList: true, subtree: true });
+
+	    function handleError() {
+		observer.disconnect();
+		if (window.fullscreenAPIinvoked) {
+		    window.fullscreenAPIinvoked = false;
+		    document.exitFullscreen();
+		    alert("Guacamole server disconnected.");
+		    window.close();
+		}
+	    }
+
 	})();
         `).catch(err => console.error('Error executing Tampermonkey script:', err));
 
