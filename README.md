@@ -1,7 +1,7 @@
 
 ## Introduction
-When using a browser as the web client for a remote desktop, some shortcuts such as Alt+Tab or Win-key combinations cannot be sent (passthrough). Here are the source codes for two versions — an Electron and a Tampermonkey userscript version—that enable all shortcuts in fullscreen mode.<br>
-當使用瀏覽器作為遠端桌面的 Web Client 時, 某些快捷鍵（例如 Alt+Tab 或 Win-key 組合鍵）無法傳送。以下提供兩個版本的原始碼——Electron 與 Tampermonkey Userscript 版——可在全螢幕模式下啟用所有快捷鍵。
+When using a browser as the web client for a remote desktop, some shortcuts such as Alt+Tab, Win-key, F11 or Ctrl+W combinations cannot be sent (passthrough). Here are the source codes for two versions — an Electron and a Tampermonkey userscript version—that enable all shortcuts in fullscreen mode.<br>
+當使用瀏覽器作為遠端桌面的 Web Client 時, 某些快捷鍵（例如 Alt+Tab, Win-key 組合鍵, F11 或 Ctrl+W）無法傳送。以下提供兩個版本的原始碼——Electron 與 Tampermonkey Userscript 版——可在全螢幕模式下啟用所有快捷鍵。
 
 Remote Desktop Web Client == Web-based Remote Access == Full Keyboard Access with passthrough mode
 
@@ -82,7 +82,7 @@ Web clients such as RustDesk, Splashtop, AnyDesk, TeamViewer, and Chrome Remote 
 - Shortcuts from other extensions cannot be passthrough. For example, Immersive Translate (沉浸式翻譯) uses Alt+A and Alt+S, which cannot be sent to the remote server.<br>
 You may install the Tampermonkey userscript in another Chromium-based browser to avoid shortcut conflicts with Immersive Translate.
 
-- Ctrl+Shift+F and Ctrl+Shift+V cannot be passthrough in Microsoft Edge, but work correctly in Chrome.
+- Ctrl+Shift+F, Ctrl_Shift+V and Ctrl+Shift+X cannot be passthrough in Microsoft Edge, but work correctly in Chrome.
 
 - The Electron app checks port 443 by default; modify this setting as needed for your application.
 
