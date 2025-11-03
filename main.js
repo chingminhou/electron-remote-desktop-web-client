@@ -132,30 +132,30 @@ function createWindow() {
 			document.body.requestFullscreen();
 			window.fullscreenAPIinvoked = true;
 			if (lang === 'zh-TW') {
-				fsButtonElem.value = "全鍵轉發On: {滑鼠點擊}   |   Off: {右Ctrl}   |   退出: {右Ctrl}{Ctrl+W}";
+				fsButtonElem.value = "全鍵轉發On: {滑鼠點擊}   |   Off: {右Ctrl}   |   退出: {右Ctrl}{Win+Tab}";
 			} else {
 			    if (lang === 'zh-CN') {
-				fsButtonElem.value = "键盘直通On: {鼠标单击}   |   Off: {右Ctrl}   |   退出: {右Ctrl}{Ctrl+W}";
+				fsButtonElem.value = "键盘直通On: {鼠标单击}   |   Off: {右Ctrl}   |   退出: {右Ctrl}{Win+Tab}";
 			    } else {
-				fsButtonElem.value = "Passthrough On: {Mouse Click}  |  Off: {Right-Ctrl}  |  Exit: {Right-Ctrl}{Ctrl+W}";
+				fsButtonElem.value = "Passthrough On: {Mouse Click}  |  Off: {Right-Ctrl}  |  Exit: {Right-Ctrl}{Win+Tab}";
 			    }
 			}
 			fsButtonElem.style.backgroundColor = "green";
 			fsButtonElem.style.opacity = "100%";
-			setTimeout(() => { fsButtonElem.style.opacity = "95%"; }, 500*1);
-			setTimeout(() => { fsButtonElem.style.opacity = "90%"; }, 500*2);
-			setTimeout(() => { fsButtonElem.style.opacity = "85%"; }, 500*3);
-			setTimeout(() => { fsButtonElem.style.opacity = "80%"; }, 500*4);
-			setTimeout(() => { fsButtonElem.style.opacity = "75%"; }, 500*5);
-			setTimeout(() => { fsButtonElem.style.opacity = "70%"; }, 500*6);
-			setTimeout(() => { fsButtonElem.style.opacity = "65%"; }, 500*7);
-			setTimeout(() => { fsButtonElem.style.opacity = "60%"; }, 500*8);
-			setTimeout(() => { fsButtonElem.style.opacity = "55%"; }, 500*9);
-			setTimeout(() => { fsButtonElem.style.opacity = "50%"; }, 500*10);
-			setTimeout(() => { fsButtonElem.style.opacity = "45%"; }, 500*11);
-			setTimeout(() => { fsButtonElem.style.opacity = "40%"; }, 500*12);
-			setTimeout(() => { fsButtonElem.style.opacity = "35%"; }, 500*13);
-			setTimeout(() => { fsButtonElem.remove(); }, 500*14);
+			setTimeout(() => { fsButtonElem.style.opacity = "95%"; }, 700*1);
+			setTimeout(() => { fsButtonElem.style.opacity = "90%"; }, 700*2);
+			setTimeout(() => { fsButtonElem.style.opacity = "85%"; }, 700*3);
+			setTimeout(() => { fsButtonElem.style.opacity = "80%"; }, 700*4);
+			setTimeout(() => { fsButtonElem.style.opacity = "75%"; }, 700*5);
+			setTimeout(() => { fsButtonElem.style.opacity = "70%"; }, 700*6);
+			setTimeout(() => { fsButtonElem.style.opacity = "65%"; }, 700*7);
+			setTimeout(() => { fsButtonElem.style.opacity = "60%"; }, 700*8);
+			setTimeout(() => { fsButtonElem.style.opacity = "55%"; }, 700*9);
+			setTimeout(() => { fsButtonElem.style.opacity = "50%"; }, 700*10);
+			setTimeout(() => { fsButtonElem.style.opacity = "45%"; }, 700*11);
+			setTimeout(() => { fsButtonElem.style.opacity = "40%"; }, 700*12);
+			setTimeout(() => { fsButtonElem.style.opacity = "35%"; }, 700*13);
+			setTimeout(() => { fsButtonElem.remove(); }, 700*14);
 		    } else {
 			document.exitFullscreen();
 		    }
@@ -301,6 +301,7 @@ function createWindow() {
         return false;
     });
 
+    /*
     globalShortcut.register('Ctrl+W', () => {
         app.quit();
         return false;
@@ -310,6 +311,7 @@ function createWindow() {
         app.quit();
         return false;
     });
+    */
 
     globalShortcut.register('Control+Shift+I', () => {
         if (mainWindow.webContents.isDevToolsOpened()) {
