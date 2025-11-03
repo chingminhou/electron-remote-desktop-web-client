@@ -34,7 +34,7 @@ Open the [userscript](https://gist.github.com/chingminhou/ba2621aa76fcfa0e05e7c5
 |進入全螢幕時, 或滑鼠<br>游標頂到螢幕上緣時|無動作| 會降下如何退出全螢幕的提示 | 會降下網址列/選單列 |
 |全鍵轉發|Yes|Yes, 除了其它Extension的快捷鍵|No,<br>Alt+Tab, Win-key 組合鍵,<br>系統快捷鍵無法轉發到<br>Remote Desktop|
 |1:1 像素對應, 當 Zoom=100% 時|Yes|Win11: No (Ratio=1.25)<br>其它: Yes|Win11: No (Ratio=1.25)<br>其它: Yes|
-|退出Remote Desktop|[右Ctrl] + [Ctrl+W], or<br><br>長按 [Esc] 2秒 + [Ctrl+W]|[右Ctrl] + [Ctrl+W] (有時無用), 或<br><br>長按 [Esc] 2秒 + [Ctrl+W]|[F11] (退出全螢幕) + [Ctrl+W], 或<br><br>長按 [Esc] 2秒 + [Ctrl+W]
+|退出Remote Desktop|[右Ctrl] + [Win+Tab], or<br><br>長按 [Esc] 2秒 + [Win+Tab]|[右Ctrl] + [Ctrl+W] (有時無用), 或<br><br>長按 [Esc] 2秒 + [Ctrl+W]|[F11] (退出全螢幕) + [Ctrl+W], 或<br><br>長按 [Esc] 2秒 + [Ctrl+W]
 
 ## Connection Steps
 | |Electron App | Chrome/Chromium-based<br>Browser + Tampermonkey | Browser |
@@ -104,13 +104,13 @@ You may install the Tampermonkey userscript in another Chromium-based browser to
 &nbsp;&nbsp;按一下 右Ctrl, 再按 Win+Space → 忘記切ENG輸入法, 臨時退出全鍵轉發, 切至ENG輸入法<br>
 &nbsp;&nbsp;最後再回到遠端桌面視窗用滑鼠點一下, 就又回到遠端桌面的全鍵轉發模式了
 
-- If the web client is running on an East Asian language version of Windows (CJK) and you experience issues while typing, check your IME state.<br>
-如果 web client 是中日韓 Windows, 並且在按鍵輸入時遇到問題, 請檢查輸入法狀態
+- If the web client is running on an East Asian language version of Windows (CJK) and you experience issues while typing, check your IME state. It may be switched to non-English IME unexpectedly by Alt+Shift or undetermined keystrokes. Removing IME before a long time connection is another way.<br>
+如果 web client 是中日韓 Windows, 並且在按鍵輸入時遇到問題, 請檢查輸入法狀態。有可能因為 Alt+Shift 或其它不確定的原因脫離 ENG 輸入法，或者在長時間遠端連線前乾脆先移掉輸入法。
 
 - For East Asian language Windows, the web client requires the English IME to control the remote desktop. However, browsers and Electron apps run in an isolated sandbox and cannot switch the IME automatically.<br>
 If the browser or Electron app is not using the English IME, press Right Ctrl, then Win+Space to select the English IME, and click the mouse to re-enable passthrough mode.<br>
 在中日韓 Windows 中, web client 用戶端需要切換至 ENG 輸入法才能控制遠端桌面。然而，瀏覽器與 Electron 應用程式運行在隔離的沙盒世界中, 無法幫你切換輸入法。
-如果瀏覽器或 Electron app 不是正在 ENG輸入法，先按 右Ctrl，再按 Win+Space 選擇 ENG輸入法, 然後點擊滑鼠再度進入全鍵轉發模式。
+如果瀏覽器或 Electron app 不是正在 ENG 輸入法，先按 右Ctrl，再按 Win+Space 選擇 ENG輸入法, 然後點擊滑鼠再度進入全鍵轉發模式。
 
 - For IME, you might want to <br>
 
