@@ -274,33 +274,33 @@ function createWindow() {
         }).catch(err => console.error('Error applying zoom:', err));
     });
 
+function registerShortcuts() {
+    globalShortcut.register('Control+=', () => {
+        mainWindow.webContents.zoomFactor += 0.1;
+    });
+    globalShortcut.register('Control+numadd', () => {
+        mainWindow.webContents.zoomFactor += 0.1;
+    });
+    globalShortcut.register('Control+-', () => {
+        mainWindow.webContents.zoomFactor -= 0.1;
+        checkZoomFactor();
+    });
+    globalShortcut.register('Control+numsub', () => {
+        mainWindow.webContents.zoomFactor -= 0.1;
+        checkZoomFactor();
+    });
     globalShortcut.register('F11', () => {
         mainWindow.setFullScreen(!mainWindow.isFullScreen());
         return false;
     });
-
-    globalShortcut.register('Control+=', () => {
-        mainWindow.webContents.zoomFactor += 0.1;
+    globalShortcut.register('Control+Shift+I', () => {
+        if (mainWindow.webContents.isDevToolsOpened()) {
+            mainWindow.webContents.closeDevTools();
+        } else {
+            mainWindow.webContents.openDevTools();
+        }
         return false;
     });
-
-    globalShortcut.register('Control+numadd', () => {
-        mainWindow.webContents.zoomFactor += 0.1;
-        return false;
-    });
-
-    globalShortcut.register('Control+-', () => {
-        mainWindow.webContents.zoomFactor -= 0.1;
-        checkZoomFactor();
-        return false;
-    });
-
-    globalShortcut.register('Control+numsub', () => {
-        mainWindow.webContents.zoomFactor -= 0.1;
-        checkZoomFactor();
-        return false;
-    });
-
     /*
     globalShortcut.register('Ctrl+W', () => {
         app.quit();
@@ -312,19 +312,28 @@ function createWindow() {
         return false;
     });
     */
+}
 
-    globalShortcut.register('Control+Shift+I', () => {
-        if (mainWindow.webContents.isDevToolsOpened()) {
-            mainWindow.webContents.closeDevTools();
-        } else {
-            mainWindow.webContents.openDevTools();
-        }
-        return false;
-    });
+function unregisterShortcuts() {
+    globalShortcut.unregister('Control+=');
+    globalShortcut.unregister('Control+numadd');
+    globalShortcut.unregister('Control+-');
+    globalShortcut.unregister('Control+numsub');
+    globalShortcut.unregister('F11');
+    globalShortcut.unregister('Control+Shift+I');
+}
 
-    mainWindow.on('closed', () => {
-        mainWindow = null;
-    });
+mainWindow.on('focus', () => {
+    registerShortcuts();
+});
+
+mainWindow.on('blur', () => {
+    unregisterShortcuts();
+});
+
+if (mainWindow.isFocused()) {
+    registerShortcuts();
+}
 }
 
 function checkZoomFactor() {
