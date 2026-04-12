@@ -105,7 +105,7 @@ You may install the Tampermonkey userscript in another Chromium-based browser to
 &nbsp;&nbsp;最後再回到遠端桌面視窗用滑鼠點一下, 就又回到遠端桌面的全鍵轉發模式了
 
 - If the web client is running on an East Asian language version of Windows (CJK) and you experience issues while typing, check your IME state. It may be switched to non-English IME unexpectedly by Alt+Shift or undetermined keystrokes. Removing IME before a long time connection is another way.<br>
-如果 web client 是中日韓 Windows, 並且在按鍵輸入時遇到問題, 請檢查輸入法狀態。有可能因為 Alt+Shift 或其它不確定的原因脫離 ENG 輸入法，或者在長時間遠端連線前乾脆先移掉輸入法。
+如果 web client 是中日韓 Windows, 並且在按鍵輸入時遇到問題, 請檢查輸入法狀態。有可能因為勾選了 "讓我針對每個應用程式視窗使用不同的輸入法", 造成有時脫離 ENG 輸入法，不要勾選或者在長時間遠端連線前先移掉輸入法。
 
 - For East Asian language Windows, the web client requires the English IME to control the remote desktop. However, browsers and Electron apps run in an isolated sandbox and cannot switch the IME automatically.<br>
 If the browser or Electron app is not using the English IME, press Right Ctrl, then Win+Space to select the English IME, and click the mouse to re-enable passthrough mode.<br>
@@ -115,11 +115,14 @@ If the browser or Electron app is not using the English IME, press Right Ctrl, t
 - For IME, you might want to <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings > Time & Language > Typing > Advanced keyboard settings<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check "Let me use a different input method for each app window"<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't check "Let me use a different input method for each app window"<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;設定 > 時間與語言 > 輸入 > 進階鍵盤設定<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;勾選 "讓我針對每個應用程式視窗使用不同的輸入法"<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"不"勾選 "讓我針對每個應用程式視窗使用不同的輸入法"<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置 > 时间和语言 > 输入 > 高级键盘设置<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;勾选  "为每个应用窗口使用不同的输入法"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"不"勾选  "为每个应用窗口使用不同的输入法"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某些 App/視窗取得焦點時，Win11 會自動根據「每個視窗記憶輸入法狀態」還原成中文
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Browser 每個 Tab 或 iframe 切換焦點都可能觸發
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guacamole 的 canvas 元素取得焦點時，Win11 IME 認為是新視窗
 
 - If the remote server is Linux, the Win-key may be mapped incorrectly due to keyboard mapping issues. Run _xev_ on the remote server to check the keycode of the Win-key, then remap it. For example:
 ```sh
