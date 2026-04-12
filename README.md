@@ -126,6 +126,13 @@ If the browser or Electron app is not using the English IME, press Right Ctrl, t
 ```sh
 xmodmap -e 'keycode 250 = Super_L' // Meta_L = Super_L'
 ```
+
+- When using the VNC protocol, keystrokes may repeat endlessly until another key is pressed. This can be resolved on Linux with the following command. Windows provides a similar configuration method via the GUI; however, it typically uses the RDP protocol.<br>
+使用 VNC 連線可能會偶發按鍵後, 字元一直重覆, 直到按另一鍵, 在 Linux 可以下這指令解決; 在 Windows, 也有類似的 GUI 界面去改這, 雖然 Windows 一般是用 RDP<br>
+```sh
+xset r off # xset r on , when you're on-site
+```
+
 ## Technical Brief
 - A browser has two types of fullscreen: browser-level fullscreen and Fullscreen API.<br>
 When the Fullscreen API is invoked, the _navigator.keyboard.lock_ API can pass through almost all key combinations to the server.
