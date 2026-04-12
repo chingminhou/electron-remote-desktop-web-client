@@ -118,8 +118,6 @@ If the browser or Electron app is not using the English IME, press Right Ctrl, t
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't check "Let me use a different input method for each app window"<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;設定 > 時間與語言 > 輸入 > 進階鍵盤設定<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"不"勾選 "讓我針對每個應用程式視窗使用不同的輸入法"<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置 > 时间和语言 > 输入 > 高级键盘设置<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"不"勾选  "为每个应用窗口使用不同的输入法"<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某些 App/視窗取得焦點時，Win11 會自動根據「每個視窗記憶輸入法狀態」還原成中文
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Browser 每個 Tab 或 iframe 切換焦點都可能觸發
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guacamole 的 canvas 元素取得焦點時，Win11 IME 認為是新視窗
