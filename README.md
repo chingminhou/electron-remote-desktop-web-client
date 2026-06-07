@@ -111,9 +111,7 @@ https://learn.microsoft.com/zh-cn/answers/questions/3883347/alt-tab <br>
 https://learn.microsoft.com/zh-cn/answers/questions/3931922/windows-11 <br>
 其它勾選或不勾選 "讓我針對每個應用程式視窗使用不同的輸入法", 或者取消 Alt+Shift 的方式, 都沒有用<br>
 
-- For East Asian language Windows, the web client requires the English IME to control the remote desktop. However, browsers and Electron apps run in an isolated sandbox and cannot switch the IME automatically.<br>
-If the browser or Electron app is not using the English IME, press Right Ctrl, then Win+Space to select the English IME, and click the mouse to re-enable passthrough mode.<br>
-在中日韓 Windows 中, web client 用戶端需要切換至 ENG 輸入法才能控制遠端桌面。然而，瀏覽器與 Electron 應用程式運行在隔離的沙盒世界中, 無法幫你切換輸入法。
+- 在中日韓 Windows 中, web client 用戶端需要切換至 ENG 輸入法才能控制遠端桌面。然而，瀏覽器與 Electron 應用程式運行在隔離的沙盒世界中, 無法幫你切換輸入法。
 如果瀏覽器或 Electron app 不是正在 ENG 輸入法，先按 右Ctrl，再按 Win+Space 選擇 ENG輸入法, 然後點擊滑鼠再度進入全鍵轉發模式。
 
 - If the remote server is Linux, the Win-key may be mapped incorrectly due to keyboard mapping issues. Run _xev_ on the remote server to check the keycode of the Win-key, then remap it. For example:
